@@ -8,9 +8,9 @@ import lombok.RequiredArgsConstructor;
 @Getter
 @RequiredArgsConstructor
 public enum TransferType {
-  DEPOSIT("deposit"),
-  WITHDRAW("withdraw"),
-  TRANSFER("transfer");
+  deposit("DEPOSIT"),
+  withdraw("WITHDRAW"),
+  transfer("TRANSFER");
 
   private final String value;
 

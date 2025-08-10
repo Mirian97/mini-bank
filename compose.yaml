@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17.5-alpine3.22
+    container_name: banking_db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: pass1234
+      POSTGRES_DB: banking_system
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

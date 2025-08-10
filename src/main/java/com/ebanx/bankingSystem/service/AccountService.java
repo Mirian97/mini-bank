@@ -20,9 +20,7 @@ public class AccountService {
   }
 
   public Long getBalance(Long accountId) {
-    return accountRepository
-        .findById(accountId)
-        .map(Account::getBalance).orElse(0L);
+    return this.getOne(accountId).getBalance();
   }
 
   public Account findOrCreate(Long accountId) {

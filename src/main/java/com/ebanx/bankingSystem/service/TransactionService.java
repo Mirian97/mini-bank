@@ -62,7 +62,7 @@ public class TransactionService {
   }
 
   private EventResponseDTO processTransfer(TransactionDTO dto) {
-    Account destination = accountService.getOne(dto.origin());
+    Account destination = accountService.findOrCreate(dto.destination());
     Account origin = accountService.getOne(dto.origin());
 
     if (!origin.hasSufficientBalance(dto.amount())) {

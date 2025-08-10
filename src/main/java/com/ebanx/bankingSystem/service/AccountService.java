@@ -28,5 +28,4 @@ public class AccountService {
         .findById(accountId)
         .orElseGet(() -> accountRepository.save(new Account(accountId, 0L)));
   }
-
 }

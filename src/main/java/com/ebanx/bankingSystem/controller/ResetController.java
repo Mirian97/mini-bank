@@ -21,8 +21,8 @@ public class ResetController {
 
   @PostMapping
   public ResponseEntity<String> reset() {
-    accountRepository.deleteAll();
     transactionRepository.deleteAll();
+    accountRepository.deleteAll();
     return ResponseEntity.ok().body("OK");
   }
 }

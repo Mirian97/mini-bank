@@ -11,6 +11,8 @@ import com.ebanx.bankingSystem.exception.InsufficientBalanceException;
 import com.ebanx.bankingSystem.repositories.AccountRepository;
 import com.ebanx.bankingSystem.repositories.TransactionRepository;
 
+import jakarta.transaction.Transactional;
+
 @Service
 public class TransactionService {
 
@@ -23,11 +25,12 @@ public class TransactionService {
   @Autowired
   private AccountService accountService;
 
+  @Transactional()
   public EventResponseDTO create(TransactionDTO dto) {
     return switch (dto.type()) {
-      case DEPOSIT -> processDeposit(dto);
-      case WITHDRAW -> processWithdraw(dto);
-      case TRANSFER -> processTransfer(dto);
+      case deposit -> processDeposit(dto);
+      case withdraw -> processWithdraw(dto);
+      case transfer -> processTransfer(dto);
     };
   }
 

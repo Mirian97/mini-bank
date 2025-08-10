@@ -1,6 +1,7 @@
 package com.ebanx.bankingSystem.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,6 +21,6 @@ public class EventController {
 
   @PostMapping
   public ResponseEntity<EventResponseDTO> createEvent(@RequestBody TransactionDTO dto) {
-    return ResponseEntity.ok().body(transactionService.create(dto));
+    return ResponseEntity.status(HttpStatus.CREATED).body(transactionService.create(dto));
   }
 }

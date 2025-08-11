@@ -8,6 +8,7 @@ import com.ebanx.bankingSystem.dto.TransactionDTO;
 import com.ebanx.bankingSystem.entity.Account;
 import com.ebanx.bankingSystem.entity.Transaction;
 import com.ebanx.bankingSystem.exception.InsufficientBalanceException;
+import com.ebanx.bankingSystem.mapper.AccountMapper;
 import com.ebanx.bankingSystem.repositories.AccountRepository;
 import com.ebanx.bankingSystem.repositories.TransactionRepository;
 
@@ -42,7 +43,7 @@ public class TransactionService {
 
     return new EventResponseDTO(
         null,
-        accountRepository.save(destination));
+        AccountMapper.toDto(accountRepository.save(destination)));
   }
 
   private EventResponseDTO processWithdraw(TransactionDTO dto) {
@@ -57,7 +58,7 @@ public class TransactionService {
         .save(new Transaction(dto.type(), dto.amount(), origin, null));
 
     return new EventResponseDTO(
-        accountRepository.save(origin),
+        AccountMapper.toDto(accountRepository.save(origin)),
         null);
   }
 
@@ -73,7 +74,7 @@ public class TransactionService {
         .save(new Transaction(dto.type(), dto.amount(), origin, destination));
 
     return new EventResponseDTO(
-        accountRepository.save(origin),
-        accountRepository.save(destination));
+        AccountMapper.toDto(accountRepository.save(origin)),
+        AccountMapper.toDto(accountRepository.save(destination)));
   }
 }

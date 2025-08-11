@@ -3,6 +3,7 @@
 ![Java](https://img.shields.io/badge/Java-17-orange) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.4-brightgreen) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue) ![Maven](https://img.shields.io/badge/Maven-3.x-red)
 
 This project is a RESTful API built with Spring Boot for simulating a basic banking system. It handles account management and transactions such as deposits, withdrawals, and transfers. Developed as a solution for the Ebanx coding challenge, it demonstrates CRUD-like operations for financial events, with validation, exception handling, and database persistence using PostgreSQL.
+
 Deployed on Render, this project uses a single container for both the server and its PostgreSQL database. The initial startup time can take up to 50 seconds. The application is live at: https://mini-bank-rnhv.onrender.com/
 
 ## Description

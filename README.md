@@ -3,12 +3,19 @@
 ![Java](https://img.shields.io/badge/Java-17-orange) ![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3.5.4-brightgreen) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue) ![Maven](https://img.shields.io/badge/Maven-3.x-red)
 
 This project is a RESTful API built with Spring Boot for simulating a basic banking system. It handles account management and transactions such as deposits, withdrawals, and transfers. Developed as a solution for the Ebanx coding challenge, it demonstrates CRUD-like operations for financial events, with validation, exception handling, and database persistence using PostgreSQL.
+Deployed on Render, this project uses a single container for both the server and its PostgreSQL database. The initial startup time can take up to 50 seconds. The application is live at: https://mini-bank-rnhv.onrender.com/
 
 ## Description
 
 The Mini-Bank API provides endpoints for managing bank accounts and processing transactions. Accounts are created automatically when needed (e.g., during deposits), and transactions are recorded with types like deposit, withdraw, or transfer. It includes balance checks, insufficient funds handling, and a reset feature to clear the database for testing.
 
 This application showcases Spring Boot best practices, including entity relationships (one-to-many between accounts and transactions), service layers, and custom exceptions.
+
+## Running Tests
+
+After a waiting period of approximately 50 seconds, you can test the application in the test suite using the following URL: http://ipkiss.pragmazero.com/
+
+<img src="./docs/succeded-tests.png" alt="Tests Suite" />
 
 ## Features
 

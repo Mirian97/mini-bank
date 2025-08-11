@@ -17,7 +17,7 @@ public class BalanceController {
   private AccountService accountService;
 
   @GetMapping
-  public ResponseEntity<Long> getBalance(@RequestParam Long accountId) {
-    return ResponseEntity.ok().body(accountService.getBalance(accountId));
+  public ResponseEntity<Long> getBalance(@RequestParam Long account_id) {
+    return ResponseEntity.ok().body(accountService.getBalance(account_id));
   }
 }
